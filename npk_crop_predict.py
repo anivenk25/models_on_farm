@@ -9,6 +9,43 @@
 # entry-point = "ripeness_determinant.py"
 # ///
 
+"""
+This script loads a pre-trained model from a pickle file and uses it to generate predictions based on input data.
+
+The script defines a function `predict_label()` that accepts input data, ensures it matches the expected format, and uses the loaded model to predict the label.
+
+Usage:
+1. Load the pre-trained model from a pickle file.
+2. Prepare input data as a list of dictionaries where each dictionary represents a sample with keys: 
+   - 'N' (Nitrogen content)
+   - 'P' (Phosphorus content)
+   - 'K' (Potassium content)
+   - 'temperature' (Temperature in Celsius)
+   - 'humidity' (Humidity percentage)
+   - 'ph' (Soil pH level)
+   - 'rainfall' (Rainfall in millimeters)
+3. Pass the input data to the `predict_label()` function for prediction.
+4. The function returns the predicted label based on the model's inference.
+
+Example usage:
+    input_data = [{
+        'N': 30, 
+        'P': 40, 
+        'K': 50, 
+        'temperature': 25, 
+        'humidity': 75, 
+        'ph': 6.5, 
+        'rainfall': 100
+    }]
+    predicted_label = predict_label(input_data)
+    print(f"Predicted label: {predicted_label}")
+    
+Note:
+- The model expects the input data to have specific columns: 'N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall'.
+- The output is a prediction based on the input data, which can be used for further analysis or decision-making.
+"""
+
+
 import pickle
 import pandas as pd
 
