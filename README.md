@@ -1,4 +1,6 @@
-# MODELS ON FARM :
+# MODELS ON FARM 
+A collection of custom trained models and their inference scripts for agro-tech enthusiasts no matter the scale.
+
 ```
   .              ...:::    .    --+=..--
 +%: .=+.  :+#%%@@@@@@#-  *%@@@@@@@@%==+.
@@ -30,12 +32,17 @@
 ## Clone the Repository:
 Clone the script to your local system:
 ```bash
-git clone <repository_url>
-cd <repository_directory>
+git clone https://github.com/anivenk25/models_on_farm.git
+cd models_on_farm
 ```
 
-## Run the Script:
+## Run the Ripeness determination Script:
 Execute the script from the command line:
 ```bash
-uv run book_search.py
+uv run ripeness_determinant.py
+```
+## Run the Crop prediction based on NPK and other values inference:
+Execute the script from the command line:
+```bash
+uv run npk_crop_predict.py
 ```
