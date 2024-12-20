@@ -10,6 +10,45 @@
 # entry-point = "ripeness_determinant.py"
 # ///
 
+"""
+This script loads a pre-trained TensorFlow model and uses it to predict the ripeness of fruits based on their RGB images.
+
+The script processes an image by:
+1. Loading and resizing the image.
+2. Downsampling the image by selecting every N-th pixel.
+3. Preprocessing each pixel to match the model's input format.
+4. Making predictions for each pixel.
+5. Aggregating the predictions using the mode of the classes.
+6. Computing the confidence based on the prediction probabilities.
+
+Classes:
+- "Early Ripe"
+- "Partially Ripe"
+- "Ripe"
+- "Decay"
+
+Main steps:
+1. Load the pre-trained model from the file `fruit_ripeness_rgb_model.h5`.
+2. Prompt the user for the path to an image and validate the input.
+3. Resize and convert the image to RGB format.
+4. Downsample the image for faster processing.
+5. Process each pixel of the downsampled image, predict its class, and store the predictions.
+6. After processing 100 pixels, aggregate the predictions to get the most frequent class (mode).
+7. Compute the confidence by finding the maximum prediction probability for the selected pixels.
+8. Output the final prediction along with the confidence level.
+
+Usage:
+- Run the script, input the path to the image when prompted, and receive the ripeness prediction and confidence.
+
+Example:
+    python ripeness_determinant.py
+    Enter the path to the image: /path/to/image.jpg
+    Final Prediction: Ripe (Confidence: 0.85)
+
+Note:
+- The script processes only a downsampled subset of pixels to speed up the prediction process. You can adjust the downsampling factor or the pixel count as needed.
+- Ensure the image is in a valid format and accessible at the provided path.
+"""
 
 import numpy as np
 from tensorflow.keras.models import load_model
