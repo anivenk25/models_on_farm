@@ -35,12 +35,16 @@ Clone the script to your local system:
 git clone https://github.com/anivenk25/models_on_farm.git
 cd models_on_farm
 ```
+## For a seamless experience : 
+Install and use uv to run these scripts as they are automatically set up for you to get up and running in a jiffy.
+https://github.com/astral-sh/uv
 
 ## Run the Ripeness determination Script:
 Execute the script from the command line:
 ```bash
 uv run ripeness_determinant.py
 ```
+
 ## Run the Crop prediction based on NPK and other values inference:
 Execute the script from the command line:
 ```bash
